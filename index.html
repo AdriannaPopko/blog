@@ -51,17 +51,52 @@
 <h1>
 <a name="przyk%C5%82adowe-skrypty" class="anchor" href="#przyk%C5%82adowe-skrypty"><span class="octicon octicon-link"></span></a>Przykładowe skrypty.</h1>
 
-<div class="highlight highlight-bash"><pre><span class="c">#!/bin/bash</span>
+<p>Hello world</p>
 
-<span class="c">#</span>
-<span class="c"># Hello world example</span>
-<span class="c">#</span>
-
+<div class="highlight highlight-bash"><pre>!/bin/bash
 <span class="nb">echo</span> <span class="s2">"Hello world"</span>
 </pre></div>
 
-<pre><code>afhjhgjhkljakld
-</code></pre>
+<p>Skrypt sprawdzający czy dany plik jest katalogiem:</p>
+
+<div class="highlight highlight-bash"><pre><span class="c">#!/bin/bash</span>
+<span class="k">if</span> <span class="o">[</span> -e <span class="nv">$1</span> -a -a <span class="nv">$2</span> <span class="o">]</span>
+<span class="k">then</span>
+<span class="k">if</span> <span class="o">[</span> -d <span class="nv">$1</span> <span class="o">]</span>
+<span class="k">then </span><span class="nb">echo</span> <span class="s2">"Plik $1 jest katalogiem"</span>
+<span class="k">else </span><span class="nb">echo</span> <span class="s2">"Masz plik $1"</span>
+<span class="k">fi</span>
+<span class="k">if</span> <span class="o">[</span> -d <span class="nv">$2</span> <span class="o">]</span>
+<span class="k">then </span><span class="nb">echo</span> <span class="s2">"Plik $2 jest katalogiem"</span>
+<span class="k">else </span><span class="nb">echo</span> <span class="s2">"Masz plik $2"</span>
+<span class="k">fi</span>
+<span class="k">if</span> <span class="o">[</span> -a <span class="nv">$1</span> <span class="o">]</span>
+<span class="k">then </span><span class="nb">echo</span> <span class="s2">"Nie masz pliku $1"</span>
+<span class="k">else </span><span class="nb">echo</span> <span class="s2">"Nie masz pliku $2"</span>
+<span class="k">fi</span>
+<span class="nb">exit </span>0
+</pre></div>
+
+<p>Skrypt zliczający znaki w plikach:</p>
+
+<div class="highlight highlight-bash"><pre><span class="c">#!/bin/bash</span>
+<span class="nv">a</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$1</span> <span class="p">|</span> wc -m<span class="sb">`</span>
+<span class="nv">b</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$2</span> <span class="p">|</span> wc -m<span class="sb">`</span>
+
+
+<span class="nb">echo</span> <span class="nv">$1</span> ma <span class="nv">$a</span> znakow
+<span class="nb">echo</span> <span class="nv">$2</span> ma <span class="nv">$b</span> znakow
+
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$a</span> -gt <span class="nv">$b</span> <span class="o">]</span>
+<span class="k">then</span>
+<span class="nb">echo</span> <span class="nv">$1</span> ma wiecej znakow
+<span class="k">else</span>
+<span class="nb">echo</span> <span class="nv">$2</span> ma wiecej znakow
+<span class="k">fi</span>
+
+<span class="nb">exit </span>0
+</pre></div>
 
 <h1>
 <a name="latex" class="anchor" href="#latex"><span class="octicon octicon-link"></span></a>Latex.</h1>
